@@ -1,0 +1,159 @@
+= Pack Schema
+ 
+ const CARD_SCHEMA = {
+   id: '/CARD_SCHEMA',
+   type: 'object',
+   properties: {
+     name: {
+       type: 'string',
+     },
+     visualization: {
+       type: 'string',
+     },
+     queries: {
+       type: 'array',
+       items: {
+         $ref: '/LEQL_SCHEMA',
+       },
+       properties: {
+         statement: {
+           type: 'string',
+         },
+       },
+ 
+     },
+   },
+   required: ['name', 'visualization', 'queries'],
+ };
+ 
+ const LEQL_SCHEMA = {
+   id: '/LEQL_SCHEMA',
+   type: 'object',
+   properties: {
+     leql: {
+       type: 'object',
+       properties: {
+         statement: {
+           type: 'string',
+         },
+       },
+     },
+   },
+ };
+ 
+ const CARDS_SCHEMA = {
+   id: '/CARDS_SCHEMA',
+   type: 'array',
+   items: {
+     $ref: '/CARD_SCHEMA',
+   },
+ };
+ 
+ const SEARCHES_SCHEMA = {
+   id: '/SEARCHES_SCHEMA',
+   type: 'array',
+   items: {
+     type: 'object',
+     properties: {
+       name: { type: 'string', maxLength: 32, minLength: 3 },
+       description: { type: 'string', maxLength: 512 },
+       query: { type: 'string', maxLength: 1024, minLength: 3 },
+     },
+     required: ['name', 'query'],
+   },
+ };
+ 
+ const ACTION_SCHEMA = {
+   id: '/ACTION_SCHEMA',
+   type: 'object',
+   properties: {
+     type: {
+       type: 'string',
+       enum: ['Alert'],
+     },
+     min_matches_count: { type: 'integer' },
+     min_matches_period: {
+       enum: ['Minute', '5Minute', '10Minute', '15Minute', '30Minute', 'Hour', 'Day'],
+     },
+     min_report_count: { type: 'integer' },
+     min_report_period: {
+       enum: ['Minute', '5Minute', '10Minute', '15Minute', '30Minute', 'Hour', 'Day'],
+     },
+   },
+   required: ['type'],
+ };
+ 
+ const TAGS_SCHEMA = {
+   id: '/TAGS_SCHEMA',
+   type: 'array',
+   items: {
+     type: 'object',
+     properties: {
+       type: {
+         type: 'string',
+       },
+       name: {
+         type: 'string',
+       },
+       description: {
+         type: 'string',
+       },
+       labels: {
+         type: 'array',
+         items: {
+           type: 'object',
+           properties: {
+             name: {
+               type: 'string',
+             },
+             color: {
+               type: 'string',
+             },
+           },
+         },
+       },
+       patterns: {
+         type: 'array',
+ 
+       },
+       actions: {
+         type: 'array',
+         items: {
+           $ref: '/ACTION_SCHEMA',
+         },
+       },
+     },
+     required: ['name', 'description', 'labels', 'patterns'],
+   },
+ };
+ 
+ const SCHEMA = {
+   type: 'object',
+   properties: {
+     name: {
+       type: 'string',
+       maxLength: 32,
+       minLength: 3,
+     },
+     description: {
+       type: 'string',
+       maxLength: 512,
+     },
+     searches: SEARCHES_SCHEMA,
+     tags: TAGS_SCHEMA,
+     cards: CARDS_SCHEMA,
+   },
+ };
+ 
+ const Schemas = {
+   CARD_SCHEMA,
+   CARDS_SCHEMA,
+   LEQL_SCHEMA,
+   SEARCHES_SCHEMA,
+   ACTION_SCHEMA,
+   SCHEMA,
+   TAGS_SCHEMA,
+ };
+ 
+ export default Schemas;
+ 

@@ -1,1 +1,3 @@
 = Documentation
+
+include::FileToLink.adoc[]

@@ -1,5 +1,5 @@
 .app.rb
-[source,ruby]
+[source,javascript]
 ----
 require 'sinatra'
 

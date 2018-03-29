@@ -1,5 +1,6 @@
 = Pack Schema
 
+```
 const CARD_SCHEMA = {
   id: '/CARD_SCHEMA',
   type: 'object',
@@ -156,3 +157,4 @@ const Schemas = {
 };
 
 export default Schemas;
+```

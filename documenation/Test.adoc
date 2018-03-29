@@ -1,4 +1,4 @@
-.app.rb
+
 [source,javascript]
 ----
 const CARD_SCHEMA = {

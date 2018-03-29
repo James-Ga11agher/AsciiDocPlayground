@@ -1,9 +1,29 @@
 .app.rb
 [source,javascript]
 ----
-require 'sinatra'
+const CARD_SCHEMA = {
+  id: '/CARD_SCHEMA',
+  type: 'object',
+  properties: {
+    name: {
+      type: 'string',
+    },
+    visualization: {
+      type: 'string',
+    },
+    queries: {
+      type: 'array',
+      items: {
+        $ref: '/LEQL_SCHEMA',
+      },
+      properties: {
+        statement: {
+          type: 'string',
+        },
+      },
 
-get '/hi' do
-  "Hello World!"
-end
+    },
+  },
+  required: ['name', 'visualization', 'queries'],
+};
 ----

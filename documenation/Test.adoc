@@ -26,7 +26,8 @@ const CARD_SCHEMA = {
   },
   required: ['name', 'visualization', 'queries'],
 };
-
+```
+```
 const LEQL_SCHEMA = {
   id: '/LEQL_SCHEMA',
   type: 'object',
@@ -41,7 +42,8 @@ const LEQL_SCHEMA = {
     },
   },
 };
-
+```
+```
 const CARDS_SCHEMA = {
   id: '/CARDS_SCHEMA',
   type: 'array',
@@ -49,7 +51,8 @@ const CARDS_SCHEMA = {
     $ref: '/CARD_SCHEMA',
   },
 };
-
+```
+```
 const SEARCHES_SCHEMA = {
   id: '/SEARCHES_SCHEMA',
   type: 'array',
@@ -63,7 +66,8 @@ const SEARCHES_SCHEMA = {
     required: ['name', 'query'],
   },
 };
-
+```
+```
 const ACTION_SCHEMA = {
   id: '/ACTION_SCHEMA',
   type: 'object',
@@ -83,7 +87,8 @@ const ACTION_SCHEMA = {
   },
   required: ['type'],
 };
-
+```
+```
 const TAGS_SCHEMA = {
   id: '/TAGS_SCHEMA',
   type: 'array',
@@ -127,7 +132,8 @@ const TAGS_SCHEMA = {
     required: ['name', 'description', 'labels', 'patterns'],
   },
 };
-
+```
+```
 const SCHEMA = {
   type: 'object',
   properties: {
@@ -145,7 +151,8 @@ const SCHEMA = {
     cards: CARDS_SCHEMA,
   },
 };
-
+```
+```
 const Schemas = {
   CARD_SCHEMA,
   CARDS_SCHEMA,
@@ -155,6 +162,7 @@ const Schemas = {
   SCHEMA,
   TAGS_SCHEMA,
 };
-
+```
+```
 export default Schemas;
 ```

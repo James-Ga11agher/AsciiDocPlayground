@@ -20,7 +20,6 @@
            type: 'string',
          },
        },
- 
      },
    },
    required: ['name', 'visualization', 'queries'],
@@ -114,7 +113,6 @@
        },
        patterns: {
          type: 'array',
- 
        },
        actions: {
          type: 'array',

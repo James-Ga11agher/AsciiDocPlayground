@@ -4,27 +4,52 @@
 include::FileToLink.adoc[]
 
 
+== Sample Uses
+http://styles.rapid7.com/_notifications.scss.html
+
+Informational
 [source,html]
 ----
     <Notification
       notificationMessage="Yay a message"
       type={NOTIFICATION_TYPES.DEFAULT}
     />
+----
+
+Succussful
+[source,html]
+----
     <Notification
       notificationMessage="Yay a successful message"
       type={NOTIFICATION_TYPES.SUCCESSFUL}
     />
+----
+
+Warning
+[source,html]
+----
     <Notification
       notificationMessage="Yay a warning message"
       type={NOTIFICATION_TYPES.WARNING}
     />
+----
+
+Error
+[source,html]
+----
     <Notification
       notificationMessage="Yay a error message"
       type={NOTIFICATION_TYPES.CRITICAL}
     />
+----
+
+R7 Branded
+[source,html]
+----
     <Notification
       notificationMessage="Yay a branded message"
       type={NOTIFICATION_TYPES.BRANDED}
+      onCloseNotification={() => alert('Close Me')}
     />
   </div>
 ----

@@ -2,3 +2,29 @@
 
 
 include::FileToLink.adoc[]
+
+
+[source,html]
+----
+    <Notification
+      notificationMessage="Yay a message"
+      type={NOTIFICATION_TYPES.DEFAULT}
+    />
+    <Notification
+      notificationMessage="Yay a successful message"
+      type={NOTIFICATION_TYPES.SUCCESSFUL}
+    />
+    <Notification
+      notificationMessage="Yay a warning message"
+      type={NOTIFICATION_TYPES.WARNING}
+    />
+    <Notification
+      notificationMessage="Yay a error message"
+      type={NOTIFICATION_TYPES.CRITICAL}
+    />
+    <Notification
+      notificationMessage="Yay a branded message"
+      type={NOTIFICATION_TYPES.BRANDED}
+    />
+  </div>
+----
